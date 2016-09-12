@@ -69,7 +69,7 @@ public class ApkBuildController extends Controller implements Callback {
                     return;
                 }
                 //修改apktool.yml中version的值
-                if (!command.updateApkToolYmlVersion(buildApkFolderName, params.version)) {
+                if (params.updateVersion&&!command.updateApkToolYmlVersion(buildApkFolderName, params.version)) {
                     setText("打包终止!!!!!!");
                     return;
                 }

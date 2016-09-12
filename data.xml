@@ -2,16 +2,17 @@
 <data>
     <!-- 产品名称 -->
     <product name="app_name"><!-- name属性值为string.xml内的app名称 -->
-        <item name="产品1"/>
+        <item name="APP1"/>
         <item name="产品2"/>
     </product>
 
     <!-- 渠道配置 -->
-    <channel name="channel_name"><!-- name属性值为AndroidManifest.xml meta-data的渠道key名称 -->
+    <channel name="UMENG_CHANNEL"><!-- name属性值为AndroidManifest.xml meta-data的渠道key名称 -->
         <!-- mark是渠道标记, name是渠道名称 -->
         <item mark="Google" name="Google Play"/>
         <item mark="360" name="360"/>
         <item mark="myApp" name="应用宝"/>
+        <item mark="baidu" name="百度"/>
     </channel>
 
     <!-- 打包人员 -->
@@ -23,14 +24,14 @@
     <!-- 修改AndroidManifest.xml配置 -->
     <manifest>
         <!-- 修改 meta_data 标签 -->
-        <!--<meta_data name="meta_data" value="meta_data"/>-->
+        <meta_data name="UMENG_APPKEY" value="10086"/>
     </manifest>
 
     <!-- 修改res下的资源文件 -->
     <resource>
         <!-- 修改strings.xml内容 -->
         <strings>
-            <!--<string name="string" value="string" />-->
+            <string name="app_name" value="MyTest" />
         </strings>
 
         <!-- 修改bools.xml内容 -->

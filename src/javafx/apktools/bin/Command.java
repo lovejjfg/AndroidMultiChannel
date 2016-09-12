@@ -173,12 +173,13 @@ public class Command {
                     Attribute attribute1 = s.attribute("value");
                     System.out.println(" attribute1 name=" +attribute.getName());
                     System.out.println(" attribute1 value=" +attribute.getValue());
-                     if (attribute.getValue().equals("UMENG_CHANNEL")) {
+                    //更新相关渠道号
+                     if ( "UMENG_CHANNEL".equals(name)&&"UMENG_CHANNEL".equals(attribute.getValue())) {
                         s.attribute("value").setValue(value);
                         isUpdate = true;
                         callback("更新1 AndroidManifest.xml meta-data name='" + attribute.getValue() + "' value='" + value + "'");
                     }
-                    if (attribute.getValue().equals(name)) {
+                    if ( !"UMENG_CHANNEL".equals(name)&&attribute.getValue().equals(name)) {
                         s.attribute("value").setValue(value);
                         isUpdate = true;
                         callback("更新2 AndroidManifest.xml meta-data name='" + attribute.getValue() + "' value='" + value + "'");

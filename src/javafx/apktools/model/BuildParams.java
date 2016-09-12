@@ -19,6 +19,7 @@ public class BuildParams {
     public String keyStoreAlias;
     public String keyStorePassword;
     public boolean signerTSA;
+    public boolean updateVersion;
 
     public BuildParams() {
         try {
@@ -29,6 +30,7 @@ public class BuildParams {
             keyStoreAlias = properties.getProperty("KEY_STORE_ALIAS", "");
             keyStorePassword = properties.getProperty("KEY_STORE_PASSWORD", "");
             signerTSA = Boolean.parseBoolean(properties.getProperty("SIGNER_TSA", "false"));
+            updateVersion = Boolean.parseBoolean(properties.getProperty("UPDATE_VERSIONCODE", "false"));
             inputStream.close();
             properties.clear();
         } catch (IOException e) {
