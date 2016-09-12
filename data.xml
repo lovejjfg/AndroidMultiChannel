@@ -24,7 +24,7 @@
     <!-- 修改AndroidManifest.xml配置 -->
     <manifest>
         <!-- 修改 meta_data 标签 -->
-        <meta_data name="UMENG_APPKEY" value="10086"/>
+        <meta_data name="UMENG_APPKEY" value="1008611111"/>
     </manifest>
 
     <!-- 修改res下的资源文件 -->
