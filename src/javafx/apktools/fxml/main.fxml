@@ -21,10 +21,6 @@
         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Label text="产品名称:  " GridPane.halignment="RIGHT" />
-        <ComboBox fx:id="product" onAction="#productAction" GridPane.columnIndex="1" />
-        <Label text="定制人员:  " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-        <ComboBox fx:id="person" onAction="#personAction" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Label text="发布渠道:  " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
         <ComboBox fx:id="channel" onAction="#channelAction" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <Button mnemonicParsing="false" onAction="#btnAddChannel" text="添加" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
@@ -32,8 +28,6 @@
                 <Insets left="6.0" right="6.0" />
             </GridPane.margin>
         </Button>
-        <Label text="版本名称:  " GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
-        <TextField fx:id="version" maxWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
         <Label text="选择APK文件:  " GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
         <TextField fx:id="buildFile" editable="false" maxWidth="-Infinity" onMouseClicked="#btnFileChooser" GridPane.columnIndex="1" GridPane.rowIndex="4" />
         <Button mnemonicParsing="false" onAction="#btnFileChooser" text="选择" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">

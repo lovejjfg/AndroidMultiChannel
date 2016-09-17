@@ -30,32 +30,32 @@ public class Data {
             Document document = new SAXReader().read(new File("data.xml"));
             Element element = document.getRootElement();
 
-            Element productElement = element.element("product");
-            appName = productElement.attribute("name").getValue();
-            List<Element> elements = productElement.elements();
-            for (Element e : elements) {
-                product.add(new Product(e.attribute("name").getValue()));
-            }
+//            Element productElement = element.element("product");
+//            appName = productElement.attribute("name").getValue();
+//            List<Element> elements = productElement.elements();
+//            for (Element e : elements) {
+//                product.add(new Product(e.attribute("name").getValue()));
+//            }
 
             Element channelElement = element.element("channel");
             channelName = channelElement.attribute("name").getValue();
-            elements = channelElement.elements();
+            List<Element> elements = channelElement.elements();
             for (Element e : elements) {
                 channel.add(new Channel(e.attribute("name").getValue(), e.attribute("mark").getValue()));
             }
 
-            Element personElement = element.element("person");
-            personName = personElement.attribute("name").getValue();
-            elements = personElement.elements();
-            for (Element e : elements) {
-                person.add(new Person(e.attribute("name").getValue(), e.attribute("mark").getValue()));
-            }
+//            Element personElement = element.element("person");
+//            personName = personElement.attribute("name").getValue();
+//            elements = personElement.elements();
+//            for (Element e : elements) {
+//                person.add(new Person(e.attribute("name").getValue(), e.attribute("mark").getValue()));
+//            }
 
-            Element manifestElement = element.element("manifest");
-            elements = manifestElement.elements();
-            for (Element e : elements) {
-                manifest.addMetaData(e.attribute("name").getValue(), e.attribute("value").getValue());
-            }
+//            Element manifestElement = element.element("manifest");
+//            elements = manifestElement.elements();
+//            for (Element e : elements) {
+//                manifest.addMetaData(e.attribute("name").getValue(), e.attribute("value").getValue());
+//            }
 
             Element resourceElement = element.element("resource");
             elements = resourceElement.elements();

@@ -28,7 +28,7 @@ public class MainController extends Controller {
     public ComboBox<Product> product;
     public ComboBox<Channel> channel;
     public ComboBox<Person> person;
-    public TextField version, buildFile, resFile;
+    public TextField  buildFile, resFile;
     public ImageView image;
 
     private FileChooser fileChooser;
@@ -41,17 +41,17 @@ public class MainController extends Controller {
         if (!actionTime()) {
             return;
         }
-        String versionText = version.getText();
-        if (versionText == null || versionText.trim().length() == 0) {
-            new Alert(Alert.AlertType.WARNING, "请填写版本名称", ButtonType.OK).show();
-            return;
-        }
-        buildInfo.version = versionText;
+//        String versionText = version.getText();
+//        if (versionText == null || versionText.trim().length() == 0) {
+//            new Alert(Alert.AlertType.WARNING, "请填写版本名称", ButtonType.OK).show();
+//            return;
+//        }
+//        buildInfo.version = versionText;
         if (buildInfo.apkFile == null) {
             new Alert(Alert.AlertType.WARNING, "请选择apk文件", ButtonType.OK).show();
             return;
         }
-        buildInfo.resource.getStrings().add(new Strings("app_name", product.getSelectionModel().getSelectedItem().name));
+//        buildInfo.resource.getStrings().add(new Strings("app_name", product.getSelectionModel().getSelectedItem().name));
         if (getBuildStage() != null) {
             if (!buildStage.isShowing()) {
                 buildStage.show();
@@ -102,13 +102,13 @@ public class MainController extends Controller {
         }
     }
 
-    public void productAction() {
-        buildInfo.product = product.getSelectionModel().getSelectedItem();
-    }
+//    public void productAction() {
+////        buildInfo.product = product.getSelectionModel().getSelectedItem();
+//    }
 
-    public void personAction() {
-        buildInfo.person = person.getSelectionModel().getSelectedItem();
-    }
+//    public void personAction() {
+////        buildInfo.person = person.getSelectionModel().getSelectedItem();
+//    }
 
     public void channelAction() {
         buildInfo.channel.clear();
@@ -140,11 +140,13 @@ public class MainController extends Controller {
         buildInfo.channelName = data.getChannelName();
         buildInfo.personName = data.getPersonName();
 
-        List<Product> products = data.getProduct();
-        ObservableList list = product.getItems();
-        list.addAll(products);
-        product.getSelectionModel().select(0);
-        buildInfo.product = product.getSelectionModel().getSelectedItem();
+//        List<Product> products = data.getProduct();
+        
+        ObservableList list;
+//        ObservableList list = product.getItems();
+//        list.addAll(products);
+//        product.getSelectionModel().select(0);
+//        buildInfo.product = product.getSelectionModel().getSelectedItem();
 
         List<Channel> channels = data.getChannel();
         addDefChannel(channels);
@@ -153,16 +155,16 @@ public class MainController extends Controller {
         channel.getSelectionModel().select(0);
         buildInfo.channel.addAll(channels);
 
-        List<Person> persons = data.getPerson();
-        list = person.getItems();
-        list.addAll(persons);
-        person.getSelectionModel().select(0);
-        buildInfo.person = person.getSelectionModel().getSelectedItem();
+//        List<Person> persons = data.getPerson();
+//        list = person.getItems();
+//        list.addAll(persons);
+//        person.getSelectionModel().select(0);
+//        buildInfo.person = person.getSelectionModel().getSelectedItem();
 
         buildInfo.manifest = data.getManifest();
         buildInfo.resource = data.getResource();
-        version.setText("1.0.0");
-        buildInfo.version = version.getText();
+//        version.setText("1.0.0");
+//        buildInfo.version = version.getText();
 
     }
 

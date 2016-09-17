@@ -177,20 +177,11 @@ public class Command {
                         s.attribute("value").setValue(value);
                         isUpdate = true;
                         callback("更新1 AndroidManifest.xml meta-data name='" + attribute.getValue() + "' value='" + value + "'");
-                    }
-                    if (attribute.getValue().equals(name)) {
-                        s.attribute("value").setValue(value);
-                        isUpdate = true;
-                        callback("更新2 AndroidManifest.xml meta-data name='" + attribute.getValue() + "' value='" + value + "'");
-                    }
+                       break;
+                     }
+                  
                 }
             }
-//            OutputFormat format = OutputFormat.createCompactFormat();
-//            format.setNewlines(true);
-//            format.setTrimText(true);
-//            format.setIndent(true);
-//            format.setIndentSize(4);
-//            XMLWriter writer = new XMLWriter(new FileOutputStream(androidManifestFile), format);
             if(isUpdate){
                 XMLWriter writer = new XMLWriter(new FileOutputStream(androidManifestFile));
                 writer.write(document);
@@ -324,7 +315,7 @@ public class Command {
             builder.command(command);
             builder.redirectErrorStream(true);
             process = builder.start();
-            reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            reader = new BufferedReader(new InputStreamReader(process.getInputStream(),"UTF-8"));
             String line;
             while ((line = reader.readLine()) != null) {
                 callback(line);
