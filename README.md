@@ -26,4 +26,8 @@ anroid多渠道打包工具，使用了apktool.jar 和 dom4j.jar !通过反编�
 3、运行jar文件夹中的`ChanelTool.jar`
 
 
+# 感谢
+项目源码来自[ApkCustomizationTool](https://github.com/SSOOnline/ApkCustomizationTool)！
+
+
 
