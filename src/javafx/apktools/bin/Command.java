@@ -187,7 +187,7 @@ public class Command {
                         callback("更新1 AndroidManifest.xml meta-data name='" + attribute.getValue() + "' value='" + value + "'");
                        break;
                      }
-                  
+
                 }
             }
             if(isUpdate){

@@ -50,7 +50,6 @@ public class ApkBuildController extends Controller implements Callback {
                 params.manifest.getMetaData().clear();
 //                params.manifest.getMetaData().add(new MetaData(params.personName, params.person.mark));
                 params.manifest.getMetaData().add(new MetaData(params.channelName, channel.mark));
-
 //                setText(String.format("\r\n产品：%s\r\n渠道：%s\r\n人员：%s\r\n版本：%s", params.product.name, channel.toString(), params.person.toString(), params.version));
                 String zipalignApkOutputFile = "渠道包" + File.separator + apkFile.getName().replace(".apk", "").trim()+"-"+ channel.name + ".apk";
                 //+ "-" + params.product.name + "-" + params.version 
