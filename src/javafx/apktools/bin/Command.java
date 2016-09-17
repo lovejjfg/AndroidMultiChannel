@@ -1,19 +1,26 @@
 package javafx.apktools.bin;
 
-import javafx.apktools.model.manifest.Manifest;
-import javafx.apktools.model.manifest.MetaData;
-import javafx.apktools.model.resource.Bools;
-import javafx.apktools.model.resource.Resource;
-import javafx.apktools.model.resource.Strings;
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.channels.FileChannel;
+import java.util.List;
+
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
-import java.io.*;
-import java.nio.channels.FileChannel;
-import java.util.List;
+import javafx.apktools.model.manifest.Manifest;
+import javafx.apktools.model.manifest.MetaData;
+import javafx.apktools.model.resource.Bools;
+import javafx.apktools.model.resource.Resource;
+import javafx.apktools.model.resource.Strings;
 
 /**
  * 定制APK命令类
@@ -173,7 +180,8 @@ public class Command {
                     Attribute attribute1 = s.attribute("value");
                     System.out.println(" attribute1 name=" +attribute.getName());
                     System.out.println(" attribute1 value=" +attribute.getValue());
-                     if (attribute.getValue().equals("UMENG_CHANNEL")) {
+                    //更新相关渠道号
+                     if ( "UMENG_CHANNEL".equals(name)&&"UMENG_CHANNEL".equals(attribute.getValue())) {
                         s.attribute("value").setValue(value);
                         isUpdate = true;
                         callback("更新1 AndroidManifest.xml meta-data name='" + attribute.getValue() + "' value='" + value + "'");

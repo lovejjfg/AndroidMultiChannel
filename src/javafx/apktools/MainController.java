@@ -51,7 +51,6 @@ public class MainController extends Controller {
             new Alert(Alert.AlertType.WARNING, "请选择apk文件", ButtonType.OK).show();
             return;
         }
-//        buildInfo.resource.getStrings().add(new Strings("app_name", product.getSelectionModel().getSelectedItem().name));
         if (getBuildStage() != null) {
             if (!buildStage.isShowing()) {
                 buildStage.show();

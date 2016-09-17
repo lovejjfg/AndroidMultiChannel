@@ -7,7 +7,7 @@
     </product>
 
     <!-- 渠道配置 -->
-    <channel name="UMENG_CHANNEL"><!-- name属性值为AndroidManifest.xml meta-data的渠道key名称 -->
+    <channel name="channel_name"><!-- name属性值为AndroidManifest.xml meta-data的渠道key名称 -->
         <!-- mark是渠道标记, name是渠道名称 -->
         <item mark="Google" name="Google Play"/>
         <item mark="360" name="360"/>
