@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+
+    <!-- 渠道配置 -->
+    <channel name="UMENG_CHANNEL"><!-- name属性值为AndroidManifest.xml meta-data的渠道key名称 -->
+        <!-- mark是渠道标记, name是渠道名称 -->
+        <item mark="Google" name="Google Play"/>
+        <item mark="360" name="360"/>
+        <item mark="myApp" name="应用宝"/>
+        <item mark="baidu" name="百度"/>
+    </channel>
+
+
+    <!-- 修改res下的资源文件 -->
+    <resource>
+        <!-- 修改strings.xml内容 -->
+        <strings>
+            <string name="app_name" value="MyTest" />
+        </strings>
+
+        <!-- 修改bools.xml内容 -->
+        <bools>
+            <!--<bool name="bool" value="bool" />-->
+        </bools>
+    </resource>
+</data>
